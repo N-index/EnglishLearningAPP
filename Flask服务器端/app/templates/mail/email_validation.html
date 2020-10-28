@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证邮箱</title>
+    <style>
+        body{
+            background-color: #1b6d85;
+            color: white;
+            text-align: center;
+        }
+        h1{
+            display: inline-block;
+            background-color: #f1faa9;
+            color: #1d3b7c;
+        }
+        a:link, a:visited{
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+	<h1>
+        {{ email }}，你好：
+    </h1>
+    
+     <h2>验证码👉 {{ validation_code}} (十五分钟内有效) </h2>
+    <a href="{{ url_for('auth.confirm',token=token,_external=True) }}">
+        点击此处激活你的账号
+    </a>
+
+
+</body>
+</html>
